@@ -1,16 +1,9 @@
+import { HydrateClient } from "~/trpc/server";
 
-
-import { LatestPost } from "~/components/post";
-import { auth } from "~/server/auth";
-import { api, HydrateClient } from "~/trpc/server";
+export const dynamic = "force-dynamic";
 
 export default async function Home() {
-  const hello = await api.post.hello({ text: "from tRPC" });
-  const session = await auth();
-
-  if (session?.user) {
-    void api.post.getLatest.prefetch();
-  }
+  
 
   return (
     <HydrateClient>

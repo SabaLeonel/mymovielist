@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 
-function LogInPage() {
+function AuthPage() {
     return (
         <div>
             <h1>Log In</h1>
@@ -17,7 +17,7 @@ export default function Page() {
     return (
         <div className='flex justify-center items-center'>
             <Suspense fallback={<div>Loading...</div>}>
-                <LogInPage />
+                <AuthPage />
             </Suspense>
         </div>
     );
