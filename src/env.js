@@ -12,6 +12,7 @@ export const env = createEnv({
         ? z.string()
         : z.string().optional(),
 	AUTH_GOOGLE_ID: z.string(),
+  AUTH_MAILGUN_KEY: z.string(),
 	AUTH_GOOGLE_SECRET: z.string(),
 	AUTH_TMDB_ID: z.string(),
 	AUTH_TMDB_SECRET: z.string(),
@@ -35,6 +36,7 @@ export const env = createEnv({
    * middlewares) or client-side so we need to destruct manually.
    */
   runtimeEnv: {
+    AUTH_MAILGUN_KEY: process.env.AUTH_MAILGUN_KEY,
     AUTH_SECRET: process.env.AUTH_SECRET,
     AUTH_GOOGLE_ID: process.env.AUTH_GOOGLE_ID,
     AUTH_GOOGLE_SECRET: process.env.AUTH_GOOGLE_SECRET,
