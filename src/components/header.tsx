@@ -19,7 +19,7 @@ export async function Header() {
 			</div>
 			<div className="hidden flex-1 items-center justify-end gap-x-6 md:flex">
 				<div className="flex items-center gap-4">
-					<Link href={session ? "/api/auth/signout" : "/api/auth/signin"} className="line-clamp-1 flex items-center justify-center gap-2 rounded-md bg-primary px-3.5 py-2.5 text-center text-base font-bold text-white shadow-sm hover:bg-primary/80">{session ? "Sign out" : "Sign in"}</Link>
+					<Link href="/sign-in" className="line-clamp-1 flex items-center justify-center gap-2 rounded-md bg-primary px-3.5 py-2.5 text-center text-base font-bold text-white shadow-sm hover:bg-primary/80">{session ? "Sign out" : "Sign in"}</Link>
 				</div>
 			</div>
 		</nav>

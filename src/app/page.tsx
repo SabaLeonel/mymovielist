@@ -12,7 +12,6 @@ export default async function Home() {
           <h1 className="text-5xl font-extrabold tracking-tight sm:text-[5rem]">
             My Movie <span className="text-[hsl(280,100%,70%)]">List</span>
           </h1>
-  
         </div>
       </main>
     </HydrateClient>
