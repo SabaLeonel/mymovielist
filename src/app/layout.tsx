@@ -1,10 +1,8 @@
-import "~/styles/globals.css";
+import "@/styles/globals.css";
 
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
-
-import { Header } from "~/app/components/header";
-import { TRPCReactProvider } from "~/trpc/react";
+import { TRPCReactProvider } from "@/trpc/react";
 
 export const metadata: Metadata = {
 	title: "My Movie List App",
@@ -18,7 +16,6 @@ export default function RootLayout({
 	return (
 		<html lang="en" className={`${GeistSans.variable}`}>
 			<body className="bg-[#150002]">
-				<Header />
 				<TRPCReactProvider>{children}</TRPCReactProvider>
 			</body>
 		</html>
