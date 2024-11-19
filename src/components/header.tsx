@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { auth } from "@/server/auth";
+import { Button } from "@/components/ui/button";
 
 
 export async function Header() {
@@ -12,14 +13,19 @@ export async function Header() {
 					<h1 className="relative flex select-none flex-row items-baseline text-3xl font-bold">
 						<span className="sr-only">MyMovieList</span>
 						<span className="tracking-tight text-white cursor-pointer">
-							mymovie<span className="text-primary ">list</span>
+							Mymovie<span className="text-primary ">list</span>
 						</span>
 					</h1>
 				</div>
 			</div>
 			<div className="hidden flex-1 items-center justify-end gap-x-6 md:flex">
 				<div className="flex items-center gap-4">
-					<Link href="/sign-in" className="line-clamp-1 flex items-center justify-center gap-2 rounded-md bg-primary px-3.5 py-2.5 text-center text-base font-bold text-white shadow-sm hover:bg-primary/80">{session ? "Sign out" : "Sign in"}</Link>
+					<Button
+						variant="default"
+						size="lg"
+					>
+						<Link href="/sign-in">{session ? "Sign out" : "Sign in"}</Link>
+					</Button>
 				</div>
 			</div>
 		</nav>
