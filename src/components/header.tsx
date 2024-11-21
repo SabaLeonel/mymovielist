@@ -1,6 +1,7 @@
-import Link from "next/link";
-import { auth } from "@/server/auth";
 import { Button } from "@/components/ui/button";
+import { auth } from "@/server/auth";
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@radix-ui/react-navigation-menu";
+import Link from "next/link";
 
 
 export async function Header() {
@@ -16,6 +17,16 @@ export async function Header() {
 							Mymovie<span className="text-primary ">list</span>
 						</span>
 					</h1>
+					<NavigationMenu>
+						<NavigationMenuList>
+							<NavigationMenuItem>
+								<NavigationMenuTrigger className="text-white">Item One</NavigationMenuTrigger>
+								<NavigationMenuContent>
+									<NavigationMenuLink>Link</NavigationMenuLink>
+								</NavigationMenuContent>
+							</NavigationMenuItem>
+						</NavigationMenuList>
+					</NavigationMenu>
 				</div>
 			</div>
 			<div className="hidden flex-1 items-center justify-end gap-x-6 md:flex">
