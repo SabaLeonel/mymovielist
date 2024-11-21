@@ -14,7 +14,7 @@ export async function Header() {
 					<h1 className="relative flex select-none flex-row items-baseline text-3xl font-bold">
 						<span className="sr-only">MyMovieList</span>
 						<span className="tracking-tight text-white cursor-pointer">
-							Mymovie<span className="text-primary ">list</span>
+							mymovie<span className="text-primary ">list</span>
 						</span>
 					</h1>
 					<NavigationMenu>
