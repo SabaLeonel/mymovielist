@@ -3,6 +3,6 @@
 import { signIn } from "@/server/auth/index";
 
 export default async function resendLogin(formData: FormData) {
-	console.log(formData);
+	console.log("resendLogin", formData);
 	await signIn("mailgun", { formData });
 }
