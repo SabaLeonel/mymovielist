@@ -1,8 +1,8 @@
+import { db } from "@/server/db";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { type DefaultSession, type NextAuthConfig } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
-import Mailgun from "next-auth/providers/mailgun"
-import { db } from "@/server/db";
+import Mailgun from "next-auth/providers/mailgun";
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
@@ -30,6 +30,7 @@ declare module "next-auth" {
  *
  * @see https://next-auth.js.org/configuration/options
  */
+console.log('process.env.AUTH_MAILGUN_KEY', process.env.AUTH_MAILGUN_KEY);
 export const authConfig = {
 	providers: [
 		GoogleProvider,

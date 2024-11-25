@@ -1,12 +1,10 @@
 "use client";
 
-import { useState } from 'react';
-import { Button } from "@/components/ui/button";
-import { Mail, ChevronLeft } from 'lucide-react';
-import { LoginButton } from "@/components/auth/login-button";
-import { signIn } from "next-auth/react";
 import { Social } from "@/components/auth/social";
+import { Button } from "@/components/ui/button";
 import resendLogin from "@/server/actions/resend-login";
+import { ChevronLeft, Mail } from 'lucide-react';
+import { useState } from 'react';
 
 export const LoginForm = () => {
 	const [showForm, setShowForm] = useState(false);
