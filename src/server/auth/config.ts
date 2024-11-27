@@ -30,7 +30,6 @@ declare module "next-auth" {
  *
  * @see https://next-auth.js.org/configuration/options
  */
-console.log('process.env.AUTH_MAILGUN_KEY', process.env.AUTH_MAILGUN_KEY);
 export const authConfig = {
 	providers: [
 		GoogleProvider,
@@ -38,10 +37,21 @@ export const authConfig = {
 			from: process.env.EMAIL_FROM,
 			apiKey: process.env.AUTH_MAILGUN_KEY,
 		 }),
+		// EmailProvider({
+		// 	server: {
+		// 		host: process.env.EMAIL_SERVER_HOST,
+		// 		port: process.env.EMAIL_SERVER_PORT,
+		// 		auth: {
+		// 			user: process.env.EMAIL_SERVER_USER,
+		// 			pass: process.env.EMAIL_SERVER_PASSWORD
+		// 		}
+		// 	},
+		// 	from: process.env.EMAIL_FROM
+		// }),
 	],
 	adapter: PrismaAdapter(db),
 	pages: {
-		signIn: "auth/login",
+		signIn: "/sign-in",
 	},
 	callbacks: {
 		session: ({ session, user }) => ({
