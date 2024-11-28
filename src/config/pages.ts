@@ -40,12 +40,12 @@ const home = {
   
   const people = {
 	root: {
-	  title: "People",
+	  title: "Actors",
 	  description:
 		"Discover the talented individuals who bring movies and TV shows to life. From actors to directors, explore the world of entertainment through the people who make it all happen.",
 	},
 	popular: {
-	  title: "Popular People",
+	  title: "Popular Actors",
 	  description:
 		"Explore the most popular people in the entertainment industry. From award-winning actors to visionary directors, discover the faces behind your favorite movies and TV shows.",
 	},
@@ -68,7 +68,7 @@ const home = {
 		"Catch up with the world and see what TV shows are currently trending. From viral sensations to critically acclaimed series, find out what's capturing viewers' attention.",
 	},
 	people: {
-	  title: "People",
+	  title: "Actors",
 	  description:
 		"Follow the latest trends in the world of entertainment. Discover the people who are making headlines and shaping the industry.",
 	},

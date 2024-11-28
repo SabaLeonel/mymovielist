@@ -95,7 +95,7 @@ import {
   
 
   const people = {
-	title: "People",
+	title: "Actors",
 	href: "/people",
 	icon: User,
 	description: pages.people.root.description,
@@ -122,7 +122,7 @@ import {
 		description: pages.trending.movie.description,
 	  },
 	  // {
-	  //   title: "People",
+	  //   title: "Actors",
 	  //   href: "/trending/people",
 	  //   icon: User,
 	  //   description: pages.trending.people.description,
