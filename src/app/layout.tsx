@@ -7,6 +7,7 @@ import { ThemeProvider } from "next-themes";
 import { cn } from "@/lib/utils"
 import { Analytics } from "@vercel/analytics/next";
 import { Header } from "@/components/header/header";
+import HolyLoader from "holy-loader";
 
 export const metadata: Metadata = {
 	title: "My Movie List App",
@@ -26,6 +27,7 @@ export default function RootLayout({
 			)}
 			>
 				<TRPCReactProvider>
+				<HolyLoader color="#ccc" />
 					<ThemeProvider attribute="class" defaultTheme="dark">
 						<div className="relative flex min-h-screen flex-col bg-background"
 						vaul-drawer-wrapper="">

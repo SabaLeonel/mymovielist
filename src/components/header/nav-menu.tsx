@@ -24,7 +24,7 @@ const SiteNav = () => {
 				<h1 className="text-xl font-bold">
 					<span className="sr-only">MyMovieList</span>
 					<span className="tracking-tight text-white cursor-pointer">
-						mymovie<span className="text-primary ">list</span>
+						mymovie<span className="text-primary">list</span>
 					</span>
 				</h1>
 			</Link>
