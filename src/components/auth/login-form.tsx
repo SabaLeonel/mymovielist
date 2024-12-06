@@ -5,9 +5,21 @@ import { Button } from "@/components/ui/button";
 import resendLogin from "@/server/actions/resend-login";
 import { ChevronLeft, Mail } from 'lucide-react';
 import { useState } from 'react';
+import { Loader2 } from "lucide-react"
 
 export const LoginForm = () => {
 	const [showForm, setShowForm] = useState(false);
+	const [loading, setLoading] = useState(false);
+
+
+
+	const handleSubmit = async (e: React.FormEvent) => {
+		e.preventDefault();
+		setLoading(true);
+		const formData = new FormData(e.target as HTMLFormElement);
+		await resendLogin(formData);
+		setLoading(false);
+	};
 
 	return (<div>
 		<div
@@ -40,7 +52,7 @@ export const LoginForm = () => {
 				</div>
 			</div>
 		</div>
-		<form action={resendLogin}
+		<form onSubmit={handleSubmit}
 			className={`absolute left-0 top-0 h-full w-full ${showForm ? 'opacity-100' : 'opacity-0 pointer-events-none'
 				} transition-opacity will-change-auto transform-none`}
 		>
@@ -56,8 +68,15 @@ export const LoginForm = () => {
 						placeholder="Enter your email"
 					/>
 				</div>
-				<Button type="submit" className="w-full" variant="default">
-					Send me magic link
+				<Button type="submit" className="w-full" variant="default" disabled={loading}>
+					{loading ? (
+						<>
+							<Loader2 className="animate-spin" />
+							Please wait
+						</>
+					) : (
+						"Send me magic link"
+					)}
 				</Button>
 				<Button
 					className="text-sm font-medium mt-2 hover:bg-primary/80 hover:text-white"
