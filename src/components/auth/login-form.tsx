@@ -2,23 +2,40 @@
 
 import { Social } from "@/components/auth/social";
 import { Button } from "@/components/ui/button";
-import resendLogin from "@/server/actions/resend-login";
+import { login } from "@/server/actions/login";
 import { ChevronLeft, Mail } from 'lucide-react';
 import { useState } from 'react';
 import { Loader2 } from "lucide-react"
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import { LoginSchema } from "@/server/schemas/auth";
+import { Input } from "@/components/ui/input";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { useTransition } from "react";
+import { FormError } from "@/components/form-error";
 
 export const LoginForm = () => {
 	const [showForm, setShowForm] = useState(false);
-	const [loading, setLoading] = useState(false);
+	const [isPending, startTransition] = useTransition();
+	const [error, setError] = useState<string | undefined>("");
+	const form = useForm<z.infer<typeof LoginSchema>>({
+		resolver: zodResolver(LoginSchema),
+		defaultValues: {
+			email: "",
+		},
+	});
 
 
 
-	const handleSubmit = async (e: React.FormEvent) => {
-		e.preventDefault();
-		setLoading(true);
-		const formData = new FormData(e.target as HTMLFormElement);
-		await resendLogin(formData);
-		setLoading(false);
+	const onSubmit = async (values: z.infer<typeof LoginSchema>) => {
+		setError("");
+		startTransition(() => {
+			login(values)
+			.then((data) => {
+				setError(data?.error);
+			});
+		});
 	};
 
 	return (<div>
@@ -54,44 +71,58 @@ export const LoginForm = () => {
 		</div>
 
 
-		
-		<form onSubmit={handleSubmit}
-			className={`absolute left-0 top-0 h-full w-full ${showForm ? 'opacity-100' : 'opacity-0 pointer-events-none'
-				} transition-opacity will-change-auto transform-none`}
-		>
-			<div className="flex flex-col items-center gap-3">
-				<h1 className="mt-4 text-2xl font-semibold tracking-tight">
-					What's your email address?
-				</h1>
-				<div className="flex w-full flex-col">
-					<input
-						className="border-input placeholder:text-muted-foreground flex w-full rounded-md border bg-transparent py-1 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:cursor-not-allowed disabled:opacity-50 mt-4 h-11 px-4 focus-visible:ring-blue-500/30"
-						type="text"
-						name="email"
-						placeholder="Enter your email"
-					/>
+
+		<Form {...form}>
+			<form 
+				onSubmit={form.handleSubmit(onSubmit)}
+				className={`absolute left-0 top-0 h-full w-full ${showForm ? 'opacity-100' : 'opacity-0 pointer-events-none'
+					} transition-opacity will-change-auto transform-none`}
+			>
+				<div className="flex flex-col items-center gap-3">
+					<h1 className="mt-4 text-2xl font-semibold tracking-tight">
+						What's your email address?
+					</h1>
+					<div className="flex w-full flex-col">
+						<FormField control={form.control} name="email" render={({field}) =>(
+							<FormItem>
+								<FormLabel>Email</FormLabel>
+								<FormControl>
+									<Input
+										className="border-input placeholder:text-muted-foreground flex w-full rounded-md border bg-transparent py-1 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:cursor-not-allowed disabled:opacity-50 mt-4 h-11 px-4 focus-visible:ring-blue-500/30"
+										type="email"
+										disabled={isPending}
+										{...field}
+										placeholder="Enter your email"
+									/>
+								</FormControl>
+								<FormMessage />
+							</FormItem>
+						)}/>
+						<FormError message={error}/>
+					</div>
+
+					<Button type="submit" className="w-full" variant="default" disabled={isPending}>
+						{isPending ? (
+							<>
+								<Loader2 className="animate-spin" />
+								Please wait
+							</>
+						) : (
+							"Send me magic link"
+						)}
+					</Button>
+					<Button
+						className="text-sm font-medium mt-2 hover:bg-primary/80 hover:text-white"
+						variant="ghost"
+						onClick={() => setShowForm(false)}
+						type="button"
+					>
+						<ChevronLeft />
+						Back
+					</Button>
 				</div>
-				<Button type="submit" className="w-full" variant="default" disabled={loading}>
-					{loading ? (
-						<>
-							<Loader2 className="animate-spin" />
-							Please wait
-						</>
-					) : (
-						"Send me magic link"
-					)}
-				</Button>
-				<Button
-					className="text-sm font-medium mt-2 hover:bg-primary/80 hover:text-white"
-					variant="ghost"
-					onClick={() => setShowForm(false)}
-					type="button"
-				>
-					<ChevronLeft />
-					Back
-				</Button>
-			</div>
-		</form>
+			</form>
+		</Form>
 	</div>
 	);
 }
