@@ -13,7 +13,7 @@ export const login = async (values: z.infer<typeof LoginSchema>) => {
 
 	try {
 
-		signIn("mailgun", {
+		await signIn("mailgun", {
 			email: email,
 			callbackUrl: "/"
 		});
