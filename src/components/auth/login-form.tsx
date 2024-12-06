@@ -52,6 +52,9 @@ export const LoginForm = () => {
 				</div>
 			</div>
 		</div>
+
+
+		
 		<form onSubmit={handleSubmit}
 			className={`absolute left-0 top-0 h-full w-full ${showForm ? 'opacity-100' : 'opacity-0 pointer-events-none'
 				} transition-opacity will-change-auto transform-none`}
