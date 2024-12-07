@@ -13,9 +13,6 @@ export default {
 			},
 		},
 		extend: {
-			transitionDuration: {
-				'2500': '2500ms',
-			},
 			fontFamily: {
 				sans: ["var(--font-geist-sans)", ...fontFamily.sans]
 			},
