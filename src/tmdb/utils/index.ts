@@ -1,1 +1,1 @@
-export * from "./image"
+export * from "@/tmdb/utils/image"
