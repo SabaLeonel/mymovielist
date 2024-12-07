@@ -1,9 +1,7 @@
-import { Button } from "@/components/ui/button";
 import { auth } from "@/server/auth";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@radix-ui/react-navigation-menu";
-import Link from "next/link";
 import { SignOut } from "./auth/sign-out";
-
+import { SignIn } from "./auth/sign-in";
 
 
 export async function Header() {
@@ -33,16 +31,11 @@ export async function Header() {
 			</div>
 			<div className="hidden flex-1 items-center justify-end gap-x-6 md:flex">
 				<div className="flex items-center gap-4">
-				{session ? (
-					<SignOut />
-        ) : (
-            <Button
-                variant="default"
-                size="lg"
-            >
-                <Link href="/auth/sign-in">Sign in</Link>
-            </Button>
-        )}
+					{session ? (
+						<SignOut />
+					) : (
+						<SignIn />
+					)}
 				</div>
 			</div>
 		</nav>

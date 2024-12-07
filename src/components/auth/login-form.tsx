@@ -17,14 +17,13 @@ export const LoginForm = () => {
 	const [showForm, setShowForm] = useState(false);
 	const [isPending, setIsPending] = useState(false);
 	const [error, setError] = useState<string | undefined>("");
+
 	const form = useForm<z.infer<typeof LoginSchema>>({
 		resolver: zodResolver(LoginSchema),
 		defaultValues: {
 			email: "",
 		},
 	});
-
-
 
 	const onSubmit = (values: z.infer<typeof LoginSchema>) => {
 		setError("");
@@ -40,8 +39,9 @@ export const LoginForm = () => {
 	return (
 		<div>
 			<div
-				className={`${showForm ? 'opacity-0 pointer-events-none' : 'opacity-100'
-					} transition-opacity  will-change-auto transform-none`}
+				 className={`transition-all  ease-out ${
+					showForm ? "opacity-0 pointer-events-none" : "opacity-100 duration-1000"
+				  }`}
 			>
 				<div className="flex flex-col items-center gap-4">
 					<h1 className="mt-4 text-2xl font-semibold tracking-tight">
@@ -75,8 +75,9 @@ export const LoginForm = () => {
 			<Form {...form}>
 				<form
 					onSubmit={form.handleSubmit(onSubmit)}
-					className={`absolute left-0 top-0 h-full w-full ${showForm ? 'opacity-100' : 'opacity-0 pointer-events-none'
-						} transition-opacity will-change-auto transform-none`}
+					className={`absolute left-0 top-0 h-full w-full transition-all ease-out ${
+						showForm ? "opacity-100  duration-1000" : "opacity-0 pointer-events-none"
+					  }`}
 				>
 					<div className="flex flex-col items-center gap-3">
 						<h1 className="mt-4 text-2xl font-semibold tracking-tight">
@@ -126,3 +127,7 @@ export const LoginForm = () => {
 		</div>
 	);
 }
+
+
+
+
