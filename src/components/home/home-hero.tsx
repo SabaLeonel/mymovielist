@@ -10,7 +10,7 @@ export const HomeHero = () => {
 		setMounted(true)
 	}, [])
 
-	if (!mounted) return <Skeleton className="h-hero relative w-full" />
+	if (!mounted) return <Skeleton className="h-hero relative w-full bg-transparent" />
 
 	return (
 		<div className="flex flex-col items-center justify-center space-y-4 pt-10">
