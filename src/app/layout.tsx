@@ -28,7 +28,7 @@ export default function RootLayout({
 				<TRPCReactProvider>
 					<HolyLoader color="#ccc" />
 					<ThemeProvider attribute="class" defaultTheme="dark">
-						<div className="relative flex min-h-screen flex-col bg-background">{children}</div>
+						<div className="relative flex min-h-screen flex-col dark:bg-[#150002]">{children}</div>
 					</ThemeProvider>
 					<Analytics />
 				</TRPCReactProvider>

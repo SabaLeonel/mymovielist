@@ -16,7 +16,7 @@ export const Social = () => {
 			<Button
 				variant="outline"
 				onClick={() => signIn("google")}
-				className="w-full text-black">
+				className="w-full text-black  dark:bg-white">
 				<FcGoogle className="w-5 h-5" />
 				Sign in with Google
 			</Button>
