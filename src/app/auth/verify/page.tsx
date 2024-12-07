@@ -20,7 +20,7 @@ export default function Page() {
 						<SiGmail className="mr-2" />
 						Open Gmail
 					</a>
-					<a className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-8 px-[14px] py-2" href="https://mail.google.com">
+					<a className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-8 px-[14px] py-2" href="https://outlook.live.com/mail	">
 						<PiMicrosoftOutlookLogo className="mr-2" />
 						Open Outlook
 					</a>
