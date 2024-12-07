@@ -1,5 +1,7 @@
-import Link from "next/link";
-import { auth } from "~/server/auth";
+import { auth } from "@/server/auth";
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@radix-ui/react-navigation-menu";
+import { SignOut } from "./auth/sign-out";
+import { SignIn } from "./auth/sign-in";
 
 
 export async function Header() {
@@ -15,11 +17,25 @@ export async function Header() {
 							mymovie<span className="text-primary ">list</span>
 						</span>
 					</h1>
+					<NavigationMenu>
+						<NavigationMenuList>
+							<NavigationMenuItem>
+								<NavigationMenuTrigger className="text-white">Item One</NavigationMenuTrigger>
+								<NavigationMenuContent>
+									<NavigationMenuLink>Link</NavigationMenuLink>
+								</NavigationMenuContent>
+							</NavigationMenuItem>
+						</NavigationMenuList>
+					</NavigationMenu>
 				</div>
 			</div>
 			<div className="hidden flex-1 items-center justify-end gap-x-6 md:flex">
 				<div className="flex items-center gap-4">
-					<Link href={session ? "/api/auth/signout" : "/api/auth/signin"} className="line-clamp-1 flex items-center justify-center gap-2 rounded-md bg-primary px-3.5 py-2.5 text-center text-base font-bold text-white shadow-sm hover:bg-primary/80">{session ? "Sign out" : "Sign in"}</Link>
+					{session ? (
+						<SignOut />
+					) : (
+						<SignIn />
+					)}
 				</div>
 			</div>
 		</nav>
