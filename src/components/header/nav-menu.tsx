@@ -15,7 +15,6 @@ import {
 	NavigationMenuTrigger,
 	navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
-//import { Icons } from "@/components/icons"
 
 const SiteNav = () => {
 	return (
@@ -23,7 +22,7 @@ const SiteNav = () => {
 			<Link href="/">
 				<h1 className="text-xl font-bold">
 					<span className="sr-only">MyMovieList</span>
-					<span className="tracking-tight text-white cursor-pointer">
+					<span className="tracking-tight dark:text-white cursor-pointer">
 						mymovie<span className="text-primary">list</span>
 					</span>
 				</h1>

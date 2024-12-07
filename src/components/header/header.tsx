@@ -4,6 +4,7 @@ import { Skeleton } from "@/components/ui/skeleton"
 import { SiteNav } from "@/components/header/nav-menu"
 import { Suspense } from "react"
 import { SearchInput } from "@/components/header/search-input"
+import { SiteSettings } from "@/components/header/settings"
 
 export const Header = () => {
 
@@ -16,12 +17,7 @@ export const Header = () => {
 					<Suspense fallback={<Skeleton className="h-10 w-60" />}>
 						<SearchInput />
 					</Suspense>
-
-					{/* <SiteSettings />
-
-					<div className="lg:hidden">
-						<SiteMenu />
-					</div> */}
+					<SiteSettings />
 				</div>
 			</div>
 		</header>

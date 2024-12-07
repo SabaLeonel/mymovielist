@@ -6,7 +6,6 @@ import { TRPCReactProvider } from "@/trpc/react";
 import { ThemeProvider } from "next-themes";
 import { cn } from "@/lib/utils"
 import { Analytics } from "@vercel/analytics/next";
-import { Header } from "@/components/header/header";
 import HolyLoader from "holy-loader";
 
 export const metadata: Metadata = {
@@ -27,13 +26,9 @@ export default function RootLayout({
 			)}
 			>
 				<TRPCReactProvider>
-				<HolyLoader color="#ccc" />
+					<HolyLoader color="#ccc" />
 					<ThemeProvider attribute="class" defaultTheme="dark">
-						<div className="relative flex min-h-screen flex-col bg-background"
-						vaul-drawer-wrapper="">
-							<Header />
-							<div className="relative flex-1 py-4">{children}</div>
-						</div>
+						<div className="relative flex min-h-screen flex-col bg-background">{children}</div>
 					</ThemeProvider>
 					<Analytics />
 				</TRPCReactProvider>
