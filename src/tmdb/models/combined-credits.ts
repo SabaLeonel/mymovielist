@@ -1,4 +1,4 @@
-import { MovieWithMediaType, TvShowWithMediaType } from "."
+import { MovieWithMediaType } from "."
 import { MediaType } from "@/tmdb/models/commons"
 
 export type RawMovieCredit = MovieWithMediaType &
@@ -11,18 +11,7 @@ export type RawMovieCredit = MovieWithMediaType &
     credit_id: string
   }
 
-export type RawTvShowCredit = TvShowWithMediaType &
-  CombinedCredit & {
-    character: string
-    order: number
-    episode_count: number
-    first_air_date: string
-    job: string
-    department: string
-    credit_id: string
-  }
-
-export type RawCombinedCredit = RawMovieCredit | RawTvShowCredit
+export type RawCombinedCredit = RawMovieCredit
 
 export type CombinedCreditsResponse = {
   cast: Array<RawCombinedCredit>
