@@ -1,51 +1,53 @@
 {
-	"compilerOptions": {
-		/* Base Options: */
-		"esModuleInterop": true,
-		"skipLibCheck": true,
-		"target": "es2022",
-		"allowJs": true,
-		"resolveJsonModule": true,
-		"moduleDetection": "force",
-		"isolatedModules": true,
-		/* Strictness */
-		"strict": true,
-		"noUncheckedIndexedAccess": true,
-		"checkJs": true,
-		/* Bundled projects */
-		"lib": [
-			"dom",
-			"dom.iterable",
-			"ES2022"
-		],
-		"noEmit": true,
-		"module": "ESNext",
-		"moduleResolution": "Bundler",
-		"jsx": "preserve",
-		"plugins": [
-			{
-				"name": "next"
-			}
-		],
-		"incremental": true,
-		/* Path Aliases */
-		"baseUrl": ".",
-		"paths": {
-			"@/*": [
-				"./src/*"
-			],
-		}
-	},
-	"include": [
-		".eslintrc.cjs",
-		"next-env.d.ts",
-		"**/*.ts",
-		"**/*.tsx",
-		"**/*.cjs",
-		"**/*.js",
-		".next/types/**/*.ts"
-	],
-	"exclude": [
-		"node_modules"
-	]
+  "compilerOptions": {
+    /* Base Options: */
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "ES2022"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    /* Path Aliases */
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
+    "strictNullChecks": true,
+	"target": "es2022",
+  },
+  "include": [
+    ".eslintrc.cjs",
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.cjs",
+    "**/*.js",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
+/* Strictness */
+//"strict": true,
+//"noUncheckedIndexedAccess": true,
+//"checkJs": true,
+/* Bundled projects */

@@ -9,34 +9,29 @@ const config = {
   ],
   "extends": [
     "next/core-web-vitals",
-    "plugin:@typescript-eslint/recommended-type-checked",
-    "plugin:@typescript-eslint/stylistic-type-checked"
+    "prettier",
+    "plugin:tailwindcss/recommended"
   ],
   "rules": {
-    "@typescript-eslint/array-type": "off",
-    "@typescript-eslint/consistent-type-definitions": "off",
-    "@typescript-eslint/consistent-type-imports": [
-      "warn",
-      {
-        "prefer": "type-imports",
-        "fixStyle": "inline-type-imports"
-      }
-    ],
-    "@typescript-eslint/no-unused-vars": [
-      "warn",
-      {
-        "argsIgnorePattern": "^_"
-      }
-    ],
-    "@typescript-eslint/require-await": "off",
-    "@typescript-eslint/no-misused-promises": [
-      "error",
-      {
-        "checksVoidReturn": {
-          "attributes": false
-        }
-      }
-    ]
-  }
+    "@next/next/no-html-link-for-pages": "off",
+    "react/jsx-key": "off",
+    "tailwindcss/no-custom-classname": "off",
+    "unused-imports/no-unused-imports": "error"
+  },
+  "settings": {
+    "tailwindcss": {
+      "callees": ["cn"],
+      "config": "tailwind.config.js"
+    },
+    "next": {
+      "rootDir": ["./"]
+    }
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "parser": "@typescript-eslint/parser"
+    }
+  ]
 }
 module.exports = config;
