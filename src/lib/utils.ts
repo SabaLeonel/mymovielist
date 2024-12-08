@@ -59,7 +59,7 @@ export function getPersonHighlights(
   }
 }
 
-function sortByVoteScore(items: Movie[] | TvShow[] | RawCombinedCredit[]) {
+function sortByVoteScore(items: Movie[] | RawCombinedCredit[]) {
   return items.sort((a, b) => {
     const aScore = a.vote_average * (a.vote_count / 1000)
     const bScore = b.vote_average * (b.vote_count / 1000)

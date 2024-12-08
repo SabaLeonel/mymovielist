@@ -1,41 +1,59 @@
-const TMDB_API_KEY = process.env.TMDB_KEY;
+import apiConfig from "@/tmdb/api/config"
 
-if (!TMDB_API_KEY) {
-	throw new Error("TMDB_KEY is not defined in environment variables.");
+type FetcherOptions = {
+  endpoint: string
+  params?: Record<string, string | undefined>
 }
 
-const BASE_URL = "https://api.themoviedb.org/3";
+type Fetcher = <T>(options: FetcherOptions, init?: RequestInit) => Promise<T>
 
-/**
- * Fetches data from the TMDB API with default parameters and headers.
- * Automatically includes default parameters like the language.
- */
-export async function fetchTMDB<T>(
-	endpoint: string,
-	params: Record<string, string | undefined> = {}
-): Promise<T> {
-	// Merge default and provided parameters
-	const defaultParams = { language: "en-US" };
-	const sanitizedParams = Object.fromEntries(
-		Object.entries({ ...defaultParams, ...params }).filter(([, value]) => value !== undefined)
-	);
 
-	const url = new URL(`${BASE_URL}/${endpoint}`);
-	Object.entries(sanitizedParams).forEach(([key, value]) => {
-		url.searchParams.append(key, value);
-	});
+const sanitizeParams = (params?: Record<string, string | undefined>) => {
+  return Object.fromEntries(
+    Object.entries(params ?? {}).filter(([, value]) => value !== undefined)
+  )
+}
 
-	const response = await fetch(url.toString(), {
-		headers: {
-			"Content-Type": "application/json",
-			Authorization: `Bearer ${TMDB_API_KEY}`,
-		},
-	});
+const createSearchParams = (params: Record<string, string | undefined>) => {
+  const sanitizedParams = sanitizeParams(params)
+  const mergedParams: Record<string, string> = {
+    ...apiConfig.defaultParams,
+    ...sanitizedParams,
+  } as Record<string, string>
 
-	if (!response.ok) {
-		throw new Error(`TMDB API error: ${response.status} - ${response.statusText}`);
-	}
+  return new URLSearchParams(mergedParams).toString()
+}
 
-	// Return parsed JSON
-	return await response.json();
+
+const createHeaders = (init?: RequestInit): Headers => {
+  const headers = init?.headers ?? {}
+  const mergedHeaders = { ...apiConfig.defaultHeaders, ...headers }
+  return new Headers(mergedHeaders)
+}
+
+const fetcher: Fetcher = async ({ endpoint, params }, init) => {
+  const sanitizedParams = sanitizeParams(params)
+  const _params = createSearchParams(sanitizedParams)
+  const _headers = createHeaders(init)
+
+  const _init = {
+    ...init,
+    next: { revalidate: 600, ...init?.next },
+    headers: _headers,
+  }
+
+  const url = `${apiConfig.baseUrl}/${endpoint}?${_params}`
+  const response = await fetch(url, _init)
+
+   if (!response.ok) {
+     throw new Error(
+       `API request failed with status ${response.status}: ${response.statusText}`
+     )
+   }
+
+  return await response.json()
+}
+
+export const api = {
+  fetcher,
 }

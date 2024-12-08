@@ -4,7 +4,7 @@ import {
 	ProductionCountry,
 	SpokenLanguage,
 	WithMediaType,
-  } from "@tmdb/models/commons"
+  } from "@/tmdb/models/commons"
   
   export type BelongsToCollection = {
 	id: number
