@@ -12,7 +12,6 @@ export default async function Home() {
 		time: "day",
 		page: "1",
 	})
-	console.log(movies);
 
 	return (
 		<section>

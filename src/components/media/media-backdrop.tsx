@@ -26,7 +26,7 @@ export const MediaBackdrop: React.FC<MediaBackdropProps> = ({
     return (
       <div
         className={cn(
-          "size-full rounded-md border bg-muted text-muted-foreground",
+          "size-full rounded-3xl border bg-muted text-muted-foreground",
           className
         )}
         {...props}
@@ -41,7 +41,7 @@ export const MediaBackdrop: React.FC<MediaBackdropProps> = ({
   return (
     <Image
       className={cn(
-        "size-full rounded-md border bg-muted object-cover",
+        "size-full rounded-3xl border bg-muted object-cover",
         className
       )}
 	  src={src}
