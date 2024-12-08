@@ -39,7 +39,6 @@ export function getPersonHighlights(
 
   const isRemarkable = (item: RawCombinedCredit) => {
     if (item.vote_count <= 0) return false
-    if (item.media_type === "tv") return item.episode_count > 8
     return item.order < 10
   }
 
