@@ -19,7 +19,7 @@ export default {
 			animation: {
 				fadeUp: 'fadeUp .5s ease-in-out',
 				fadeDown: 'fadeDown .5s ease-in-out',
-				zoomIn: 'ZoomIn .5s ease-in-out',
+				zoomIn: 'ZoomIn 1s ease-in-out',
 			},
 
 			keyframes: {
