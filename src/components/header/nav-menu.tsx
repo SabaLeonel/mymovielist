@@ -1,10 +1,9 @@
 "use client"
 
-import Link from "next/link"
 import { NavItem, navigation } from "@/config"
 import { useActiveNav } from "@/hooks"
+import Link from "next/link"
 
-import { cn } from "@/lib/utils"
 import { Badge } from "@/components/ui/badge"
 import {
 	NavigationMenu,
@@ -15,6 +14,7 @@ import {
 	NavigationMenuTrigger,
 	navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
+import { cn } from "@/lib/utils"
 
 const SiteNav = () => {
 	return (
@@ -43,7 +43,7 @@ const SiteNav = () => {
 	)
 }
 
-const SiteNavItem = ({ title, icon, items, href, description }: NavItem) => {
+const SiteNavItem = ({ title, icon, items, href }: NavItem) => {
 	const isActive = useActiveNav(href)
 	const Icon = icon
 
@@ -53,10 +53,7 @@ const SiteNavItem = ({ title, icon, items, href, description }: NavItem) => {
 				<Icon className="size-4" /> {title}
 			</NavigationMenuTrigger>
 			<NavigationMenuContent>
-				<div className="p-6 pb-0">
-					<Icon className="mr-1 inline size-4" /> {title}
-					<p className="mt-2 text-sm">{description}</p>
-				</div>
+
 				<div className="grid w-[650px] grid-cols-2 p-4">
 					{items?.map((item) => (
 						<SiteNavListItem key={item.title} {...item} />

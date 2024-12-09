@@ -5,13 +5,11 @@ import {
 	HomeIcon,
 	LucideIcon,
 	PlayIcon,
-	RadioTowerIcon,
 	StarIcon,
 	TelescopeIcon,
 	TrendingUpIcon,
-	TvIcon,
-	User,
-  } from "lucide-react"
+	User
+} from "lucide-react"
   
   import { pages } from "@/config/pages"
   
@@ -28,15 +26,15 @@ import {
 	  },
 	],
 	links: {
-	  github: "https://github.com/oktay/movies",
+	  github: "https://github.com/sabaleonel/mymovielist",
 	  next: "https://nextjs.org",
 	  vercel: "https://vercel.com",
 	  tmdb: "https://www.themoviedb.org",
 	  shadcn: "https://ui.shadcn.com/",
 	},
 	author: {
-	  name: "Oktay Colakoglu",
-	  web: "https://oktaycolakoglu.com",
+	  name: "Leonel Saba Quezada",
+	  web: "https://quezada.ch",
 	},
   }
   
