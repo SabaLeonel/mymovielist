@@ -13,6 +13,10 @@ export function getRandomItems<T>(array: T[], count: number = 1): T[] {
   return array.slice(startIndex, startIndex + count)
 }
 
+export function getFilmItemsByTitle<T extends { title: string }>(array: T[], title: string): T | undefined {
+  return array.find(item => item.title === title);
+}
+
 export function getUniqueItems(list: any[]) {
   const unique = new Map(list.map((item) => [item.id, item]))
   return Array.from(unique.values())
