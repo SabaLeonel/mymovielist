@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { login } from "@/server/actions/login";
 import { LoginSchema } from "@/server/schemas/auth";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ChevronLeft, Loader2, Mail } from 'lucide-react';
+import { ChevronLeft, Loader2, Mail, WandSparkles } from 'lucide-react';
 import { useState } from 'react';
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -39,9 +39,8 @@ export const LoginForm = () => {
 	return (
 		<div>
 			<div
-				 className={`transition-all  ease-out ${
-					showForm ? "opacity-0 pointer-events-none" : "opacity-100 duration-1000 animate-fadeUp"
-				  }`}
+				className={`transition-all  ease-out ${showForm ? "opacity-0 pointer-events-none" : "animate-zoomIn"
+					}`}
 			>
 				<div className="flex flex-col items-center gap-4">
 					<h1 className="mt-4 text-2xl font-semibold tracking-tight">
@@ -75,9 +74,8 @@ export const LoginForm = () => {
 			<Form {...form}>
 				<form
 					onSubmit={form.handleSubmit(onSubmit)}
-					className={`absolute left-0 top-0 h-full w-full transition-all ease-out ${
-						showForm ? "opacity-100  duration-1000 animate-fadeUp" : "opacity-0 pointer-events-none"
-					  }`}
+					className={`absolute left-0 top-0 h-full w-full transition-all ease-out ${showForm ? "animate-zoomIn" : "opacity-0 pointer-events-none"
+						}`}
 				>
 					<div className="flex flex-col items-center gap-3">
 						<h1 className="mt-4 text-2xl font-semibold tracking-tight">
@@ -109,7 +107,10 @@ export const LoginForm = () => {
 									Please wait
 								</>
 							) : (
-								"Send me magic link"
+								<>
+									<WandSparkles />
+									Send me magic link
+								</>
 							)}
 						</Button>
 						<Button

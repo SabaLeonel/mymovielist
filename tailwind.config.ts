@@ -19,6 +19,7 @@ export default {
 			animation: {
 				fadeUp: 'fadeUp .5s ease-in-out',
 				fadeDown: 'fadeDown .5s ease-in-out',
+				zoomIn: 'ZoomIn .5s ease-in-out',
 			},
 
 			keyframes: {
@@ -40,6 +41,16 @@ export default {
 					to: { 
 						opacity: "1",
 						transform: "translateY(0px) scale(1)",
+					 },
+				},
+				ZoomIn: {
+					from: { 
+						opacity: "0",
+						transform: "scale(0.9)",
+					 },
+					to: { 
+						opacity: "1",
+						transform: "scale(1)",
 					 },
 				},
 			},
