@@ -1,12 +1,12 @@
 import "@/styles/globals.css";
 
-import { GeistSans } from "geist/font/sans";
-import { type Metadata } from "next";
+import { cn } from "@/lib/utils";
 import { TRPCReactProvider } from "@/trpc/react";
-import { ThemeProvider } from "next-themes";
-import { cn } from "@/lib/utils"
-import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from "@vercel/analytics/react";
+import { GeistSans } from "geist/font/sans";
 import HolyLoader from "holy-loader";
+import { type Metadata } from "next";
+import { ThemeProvider } from "next-themes";
 
 export const metadata: Metadata = {
 	title: "My Movie List App",
