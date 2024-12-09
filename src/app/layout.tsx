@@ -2,7 +2,7 @@ import "@/styles/globals.css";
 
 import { cn } from "@/lib/utils";
 import { TRPCReactProvider } from "@/trpc/react";
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from '@vercel/analytics/next';
 import { GeistSans } from "geist/font/sans";
 import HolyLoader from "holy-loader";
 import { type Metadata } from "next";
