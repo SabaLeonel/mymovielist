@@ -9,10 +9,30 @@ export const metadata: Metadata = {
 }
 
 export default async function Home() {
-	const { results: movies } = await tmdb.trending.movie({
+	const { results: trending_movies } = await tmdb.trending.movie({
 		time: "day",
 		page: "1",
 	})
+
+	const { results: now_playing_movies } = await tmdb.movie.lists({
+		region: "US",
+		list: "now_playing",
+		page: "1",
+	})
+
+	const { results: upcoming_movies } = await tmdb.discover.movies({
+		watch_region: "US",
+		page: "1",
+		sort_by: "primary_release_date.asc",
+		primary_release_year: "2025",
+	})
+
+	const { results: discover_movies } = await tmdb.discover.movies({
+		watch_region: "US",
+		page: "1",
+		sort_by: "vote_count.desc",
+	})
+
 
 	return (
 		<section>
@@ -22,12 +42,30 @@ export default async function Home() {
 					<p className="text-center">Made with Next.js, React and Tailwindcss</p>
 				</div>
 				<div className="container space-y-8 animate-fadeUp relative">
-					<HomeHero movies={movies} label="Trending Now" />
+					<HomeHero movies={trending_movies} label="Trending Now" />
 					<TrendCarousel
 						type="movie"
 						title="Trending Movies"
 						link="/trending/movie"
-						items={movies}
+						items={trending_movies}
+					/>
+					<TrendCarousel
+						type="movie"
+						title="In Theaters"
+						link="/movie/now-playing"
+						items={now_playing_movies}
+					/>
+					<TrendCarousel
+						type="movie"
+						title="Coming Soon to Theaters"
+						link="/movie/upcoming"
+						items={upcoming_movies}
+					/>
+					<TrendCarousel
+						type="movie"
+						title="More to Explore"
+						link="/movie/discover"
+						items={discover_movies}
 					/>
 				</div>
 			</div>

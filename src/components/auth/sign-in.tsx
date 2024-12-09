@@ -11,7 +11,6 @@ export function SignIn() {
 			variant="default"
 			size="lg"
 			className="w-full"
-
 		>
 			<Link href="/auth/sign-in">Sign in</Link>
 		</Button>
