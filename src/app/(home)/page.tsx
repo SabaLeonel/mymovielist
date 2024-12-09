@@ -23,7 +23,7 @@ export default async function Home() {
 	const { results: upcoming_movies } = await tmdb.discover.movies({
 		watch_region: "US",
 		page: "1",
-		sort_by: "primary_release_date.asc",
+		sort_by: "popularity.desc",
 		primary_release_year: "2025",
 	})
 
