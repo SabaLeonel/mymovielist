@@ -16,6 +16,22 @@ export default {
 			fontFamily: {
 				sans: ["var(--font-geist-sans)", ...fontFamily.sans]
 			},
+			animation: {
+				fade: 'fadeDown .5s ease-in-out',
+			},
+
+			keyframes: {
+				fadeDown: {
+					from: { 
+						opacity: "0",
+						tranform: "translateY(-30px) scale(0.9)",
+					 },
+					to: { 
+						opacity: "1",
+						tranform: "translateY(0px) scale(1)",
+					 },
+				},
+			},
 			aspectRatio: {
 				poster: "2 / 3",
 			},

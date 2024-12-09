@@ -52,7 +52,7 @@ export const HomeHero: React.FC<HomeHeroProps> = ({
 							className={`${buttonVariants({
 								size: "lg",
 								variant: "default",
-							})} dark:rounded-full dark:bg-white dark:text-black dark:hover:text-white dark:hover:bg-primary`}
+							})} dark:rounded-full dark:bg-white dark:text-black dark:hover:text-white dark:hover:bg-primary/75`}
 						>
 							<FaPlay className="h-2 w-2" />Details
 						</Link>
