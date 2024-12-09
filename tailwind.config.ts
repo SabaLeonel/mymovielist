@@ -16,6 +16,9 @@ export default {
 			fontFamily: {
 				sans: ["var(--font-geist-sans)", ...fontFamily.sans]
 			},
+			aspectRatio: {
+				poster: "2 / 3",
+			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
