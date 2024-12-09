@@ -10,7 +10,7 @@ export function SignIn() {
 		<Button asChild
 			variant="default"
 			size="lg"
-			className="flex flex-col gap-2"
+			className="w-full"
 
 		>
 			<Link href="/auth/sign-in">Sign in</Link>
