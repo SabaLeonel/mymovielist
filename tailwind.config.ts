@@ -17,18 +17,29 @@ export default {
 				sans: ["var(--font-geist-sans)", ...fontFamily.sans]
 			},
 			animation: {
-				fade: 'fadeDown .5s ease-in-out',
+				fadeUp: 'fadeUp .5s ease-in-out',
+				fadeDown: 'fadeDown .5s ease-in-out',
 			},
 
 			keyframes: {
 				fadeDown: {
 					from: { 
 						opacity: "0",
-						tranform: "translateY(-30px) scale(0.9)",
+						transform: "translateY(-30px) scale(0.9)",
 					 },
 					to: { 
 						opacity: "1",
-						tranform: "translateY(0px) scale(1)",
+						transform: "translateY(0px) scale(1)",
+					 },
+				},
+				fadeUp: {
+					from: { 
+						opacity: "0",
+						transform: "translateY(30px) scale(0.9)",
+					 },
+					to: { 
+						opacity: "1",
+						transform: "translateY(0px) scale(1)",
 					 },
 				},
 			},

@@ -17,11 +17,11 @@ export default async function Home() {
 	return (
 		<section>
 			<div>
-				<div className="flex flex-col items-center justify-center space-y-4 py-10 animate-fade">
+				<div className="flex flex-col items-center justify-center space-y-4 py-10 relative animate-fadeDown">
 					<h1 className="text-4xl font-bold text-center sm:text-6xl">mymovie<span className="text-primary">list</span></h1>
 					<p className="text-center">Made with Next.js, React and Tailwindcss</p>
 				</div>
-				<div className="container space-y-8">
+				<div className="container space-y-8 animate-fadeUp relative">
 					<HomeHero movies={movies} label="Trending Now" />
 					<TrendCarousel
 						type="movie"
