@@ -1,17 +1,17 @@
 "use client";
 
 import { Social } from "@/components/auth/social";
+import { FormError } from "@/components/form-error";
 import { Button } from "@/components/ui/button";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
 import { login } from "@/server/actions/login";
-import { ChevronLeft, Mail, Loader2 } from 'lucide-react';
+import { LoginSchema } from "@/server/schemas/auth";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { ChevronLeft, Loader2, Mail } from 'lucide-react';
 import { useState } from 'react';
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { LoginSchema } from "@/server/schemas/auth";
-import { Input } from "@/components/ui/input";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { FormError } from "@/components/form-error";
 
 export const LoginForm = () => {
 	const [showForm, setShowForm] = useState(false);
@@ -40,7 +40,7 @@ export const LoginForm = () => {
 		<div>
 			<div
 				 className={`transition-all  ease-out ${
-					showForm ? "opacity-0 pointer-events-none" : "opacity-100 duration-1000"
+					showForm ? "opacity-0 pointer-events-none" : "opacity-100 duration-1000 animate-fadeUp"
 				  }`}
 			>
 				<div className="flex flex-col items-center gap-4">
@@ -76,7 +76,7 @@ export const LoginForm = () => {
 				<form
 					onSubmit={form.handleSubmit(onSubmit)}
 					className={`absolute left-0 top-0 h-full w-full transition-all ease-out ${
-						showForm ? "opacity-100  duration-1000" : "opacity-0 pointer-events-none"
+						showForm ? "opacity-100  duration-1000 animate-fadeUp" : "opacity-0 pointer-events-none"
 					  }`}
 				>
 					<div className="flex flex-col items-center gap-3">
