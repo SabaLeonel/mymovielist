@@ -6,8 +6,7 @@ export function SignOut() {
 	return (
 		<Button
 			variant="default"
-			size="lg"
-			className="w-full"
+			className="w-full rounded-full"
 			onClick={() => signOut()}>Sign Out
 		</Button>
 	);
