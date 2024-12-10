@@ -3,7 +3,7 @@
 import { Social } from "@/components/auth/social";
 import { FormError } from "@/components/form-error";
 import { Button } from "@/components/ui/button";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { login } from "@/server/actions/login";
 import { LoginSchema } from "@/server/schemas/auth";
@@ -51,10 +51,9 @@ export const LoginForm = () => {
 							<div className="flex w-full flex-col">
 								<FormField control={form.control} name="email" render={({ field }) => (
 									<FormItem>
-										<FormLabel>Email</FormLabel>
 										<FormControl>
 											<Input
-												className="border-input placeholder:text-muted-foreground flex w-full rounded-md border bg-transparent py-1 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:cursor-not-allowed disabled:opacity-50 mt-4 h-11 px-4 focus-visible:ring-blue-500/30"
+												className="mt-4 h-11 px-4 text-sm focus-visible:ring-blue-500/30"
 												type="email"
 												disabled={isPending}
 												{...field}
@@ -67,7 +66,7 @@ export const LoginForm = () => {
 								<FormError message={error} />
 							</div>
 
-							<Button type="submit" className="w-full" variant="default" disabled={isPending}>
+							<Button type="submit" className="w-full h-11" variant="default" disabled={isPending}>
 								{isPending ? (
 									<>
 										<Loader2 className="animate-spin" />

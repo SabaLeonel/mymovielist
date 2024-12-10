@@ -49,10 +49,10 @@ export default {
 						transform: "scale(.9)",
 					},
 					'60%': {
-						transform: "scale(1)", // Slightly larger scale for the bounce
+						transform: "scale(1)",
 					},
 					'80%': {
-						transform: "scale(1.01)", // Slightly larger scale for the bounce
+						transform: "scale(1.01)",
 					},
 					'100%': {
 						opacity: "1",
