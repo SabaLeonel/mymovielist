@@ -80,7 +80,7 @@ export const LoginForm = () => {
 								)}
 							</Button>
 							<Button
-								className="text-sm font-medium mt-2 hover:bg-primary/80 hover:text-white"
+								className="text-sm font-medium mt-2 hover:bg-primary/80 hover:text-white h-8 py-2 mt-2 px-2 text-slate-500"
 								variant="ghost"
 								onClick={() => setShowForm(false)}
 								type="button"
@@ -107,7 +107,7 @@ export const LoginForm = () => {
 							<hr className="flex-grow border-gray-300" />
 						</div>
 						<Button
-							className="w-full"
+							className="w-full h-11"
 							variant="default"
 							onClick={() => setShowForm(true)}
 						>

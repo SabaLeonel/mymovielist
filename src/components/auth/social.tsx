@@ -14,9 +14,8 @@ export const Social = () => {
 	return (
 		<div className="flex items-center w-full gap-x-2">
 			<Button
-				variant="outline"
 				onClick={() => signIn("google")}
-				className="w-full text-black  dark:bg-white hover:text-black dark:hover:bg-white/85">
+				className="w-full h-11 text-black bg-white dark:bg-white hover:text-black hover:bg-white/85 dark:hover:bg-white/85">
 				<FcGoogle className="w-5 h-5" />
 				Sign in with Google
 			</Button>

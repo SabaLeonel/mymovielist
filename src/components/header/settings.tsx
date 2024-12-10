@@ -7,7 +7,6 @@ import {
 	PopoverContent,
 	PopoverTrigger,
 } from "@/components/ui/popover"
-import { ThemeToggle } from "@/components/header/theme-toggle"
 import { SignIn } from "@/components/auth/sign-in"
 import { SignOut } from "@/components/auth/sign-out"
 import { auth } from "@/server/auth";
@@ -35,14 +34,10 @@ export const SiteSettings = async () => {
 							</>
 						) : (
 							<>
-								<Label className="text-xs text-muted-foreground">Log in to your account</Label>
+								<Label className="text-xs text-muted-foreground">Sign in to access your account</Label>
 								<SignIn />
 							</>
 						)}
-					</div>
-					<div className="mt-4 space-y-2">
-						<Label className="text-xs text-muted-foreground">Theme</Label>
-						<ThemeToggle />
 					</div>
 				</div>
 			</PopoverContent>

@@ -9,10 +9,9 @@ export function SignIn() {
 	return (
 		<Button asChild
 			variant="default"
-			size="lg"
-			className="w-full"
+			className="w-full rounded-full"
 		>
-			<Link href="/auth/sign-in">Sign in</Link>
+			<Link href="/auth/sign-in">Sign In</Link>
 		</Button>
 	);
 }
