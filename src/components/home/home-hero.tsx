@@ -25,7 +25,8 @@ export const HomeHero: React.FC<HomeHeroProps> = ({
 	count = 1,
 }) => {
 	const [mounted, setMounted] = useState(false);
-	const item = getFilmItemsByTitle(movies, "Alien: Romulus");
+	console.log(movies)
+	const item = getFilmItemsByTitle(movies, "Gladiator II");
 	useEffect(() => {
 		setMounted(true)
 	}, [])
