@@ -19,39 +19,45 @@ export default {
 			animation: {
 				fadeUp: 'fadeUp .5s ease-in-out',
 				fadeDown: 'fadeDown .5s ease-in-out',
-				zoomIn: 'ZoomIn 1s ease-in-out',
+				zoomIn: 'ZoomIn .6s ease-in-out',
 			},
 
 			keyframes: {
 				fadeDown: {
-					from: { 
+					from: {
 						opacity: "0",
 						transform: "translateY(-30px) scale(0.9)",
-					 },
-					to: { 
+					},
+					to: {
 						opacity: "1",
 						transform: "translateY(0px) scale(1)",
-					 },
+					},
 				},
 				fadeUp: {
-					from: { 
+					from: {
 						opacity: "0",
 						transform: "translateY(30px) scale(0.9)",
-					 },
-					to: { 
+					},
+					to: {
 						opacity: "1",
 						transform: "translateY(0px) scale(1)",
-					 },
+					},
 				},
 				ZoomIn: {
-					from: { 
+					'0%': {
 						opacity: "0",
-						transform: "scale(0.9)",
-					 },
-					to: { 
+						transform: "scale(.9)",
+					},
+					'60%': {
+						transform: "scale(1)", // Slightly larger scale for the bounce
+					},
+					'80%': {
+						transform: "scale(1.01)", // Slightly larger scale for the bounce
+					},
+					'100%': {
 						opacity: "1",
 						transform: "scale(1)",
-					 },
+					},
 				},
 			},
 			aspectRatio: {
