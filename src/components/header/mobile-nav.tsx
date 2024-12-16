@@ -7,24 +7,24 @@ import Link from "next/link"
 
 import { Icons } from "@/components/icons"
 import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
 } from "@/components/ui/accordion"
 import { Button, buttonVariants } from "@/components/ui/button"
 import {
-    Drawer,
-    DrawerContent,
-    DrawerFooter,
-    DrawerHeader,
-    DrawerTitle,
-    DrawerTrigger,
+  Drawer,
+  DrawerContent,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
 } from "@/components/ui/drawer"
 import { Separator } from "@/components/ui/separator"
 import { cn } from "@/lib/utils"
 
-export const SmallMenu = () => {
+export const MobileNav = () => {
   const [open, setOpen] = useDialog()
 
   return (

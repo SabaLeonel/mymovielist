@@ -1,11 +1,11 @@
 
 
+import { MobileNav } from "@/components/header/mobile-nav"
 import { SiteNav } from "@/components/header/nav-menu"
 import { SearchInput } from "@/components/header/search-input"
 import { SiteSettings } from "@/components/header/settings"
 import { Skeleton } from "@/components/ui/skeleton"
 import { Suspense } from "react"
-import { SmallMenu } from "./small-menu"
 
 export const Header = () => {
 
@@ -20,7 +20,7 @@ export const Header = () => {
 					<SiteSettings />
 
 					<div className="lg:hidden">
-						<SmallMenu />
+						<MobileNav />
 					</div>
 				</div>
 			</div>
