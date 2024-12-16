@@ -5,6 +5,7 @@ import { SearchInput } from "@/components/header/search-input"
 import { SiteSettings } from "@/components/header/settings"
 import { Skeleton } from "@/components/ui/skeleton"
 import { Suspense } from "react"
+import { SmallMenu } from "./small-menu"
 
 export const Header = () => {
 
@@ -17,32 +18,12 @@ export const Header = () => {
 						<SearchInput />
 					</Suspense>
 					<SiteSettings />
+
+					<div className="lg:hidden">
+						<SmallMenu />
+					</div>
 				</div>
 			</div>
 		</header>
-
-		/* <nav className="mx-auto flex h-24 max-w-7xl items-center justify-between gap-x-6 p-6 lg:px-8">
-			<div className="flex lg:flex-1">
-				<div>
-					<h1 className="relative flex select-none flex-row items-baseline text-3xl font-bold">
-						<span className="sr-only">MyMovieList</span>
-						<span className="tracking-tight text-white cursor-pointer">
-							mymovie<span className="text-primary ">list</span>
-						</span>
-					</h1>
-				</div>
-			</div>
-			<div className="hidden flex-1 items-center justify-end gap-x-6 md:flex">
-				<div className="flex items-center gap-4">
-					<Button
-						variant="default"
-						size="lg"
-					>
-						<Link href="/sign-in">{session ? "Sign out" : "Sign in"}</Link>
-					</Button>
-				</div>
-			</div>
-		</nav> */
-
 	)
 }
