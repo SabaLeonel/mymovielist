@@ -12,6 +12,7 @@ import { ChevronLeft, Loader2, Mail, WandSparkles } from 'lucide-react';
 import { useState } from 'react';
 import { useForm } from "react-hook-form";
 import * as z from "zod";
+import { Separator } from "../ui/separator";
 
 export const LoginForm = () => {
 	const [showForm, setShowForm] = useState(false);
@@ -94,20 +95,15 @@ export const LoginForm = () => {
 			) : (
 				<div className="animate-zoomIn">
 					<div className="flex flex-col items-center gap-4">
-						<h1 className="mt-4 text-2xl font-semibold tracking-tight">
+						<h1 className="mt-4 text-3xl font-semibold tracking-tight">
 							<span className="tracking-tight text-white">
 								Log in to mymovie<span className="text-primary">list</span>
 							</span>
 						</h1>
-						<p className="text-gray-300 text-sm text-center">Welcome back!</p>
 						<Social />
-						<div className="flex items-center w-full">
-							<hr className="flex-grow border-gray-300" />
-							<span className="mx-2 text-gray-300 text-xs">or</span>
-							<hr className="flex-grow border-gray-300" />
-						</div>
+						<Separator className="bg-gray-500/50" />
 						<Button
-							className="w-full h-11"
+							className="w-full h-12 rounded-lg text-base"
 							variant="default"
 							onClick={() => setShowForm(true)}
 						>
