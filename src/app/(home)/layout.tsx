@@ -1,5 +1,6 @@
+import { Footer } from "@/components/footer/footer";
+import { Header } from "@/components/header/header";
 import type { PropsWithChildren } from 'react';
-import { Header } from "@/components/header/header"
 
 export default function Layout({ children }: Readonly<PropsWithChildren>) {
 	return (
@@ -8,6 +9,7 @@ export default function Layout({ children }: Readonly<PropsWithChildren>) {
 			<div className="relative flex-1 py-4">
 				{children}
 			</div>
+			<Footer />
 		</div>
 	);
 }
