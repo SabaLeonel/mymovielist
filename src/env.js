@@ -15,6 +15,8 @@ export const env = createEnv({
 		AUTH_MAILGUN_KEY: z.string(),
 		EMAIL_FROM: z.string().email(),
 		AUTH_GOOGLE_SECRET: z.string(),
+		FORTY_TWO_CLIENT_ID: z.string(),
+		FORTY_TWO_CLIENT_SECRET: z.string(),
 		AUTH_TMDB_ID: z.string(),
 		AUTH_TMDB_SECRET: z.string(),
 		DATABASE_URL: z.string().url(),
@@ -37,6 +39,8 @@ export const env = createEnv({
 	 * middlewares) or client-side so we need to destruct manually.
 	 */
 	runtimeEnv: {
+		FORTY_TWO_CLIENT_ID: process.env.FORTY_TWO_CLIENT_ID,
+		FORTY_TWO_CLIENT_SECRET: process.env.FORTY_TWO_CLIENT_SECRET,
 		AUTH_MAILGUN_KEY: process.env.AUTH_MAILGUN_KEY,
 		AUTH_SECRET: process.env.AUTH_SECRET,
 		AUTH_GOOGLE_ID: process.env.AUTH_GOOGLE_ID,

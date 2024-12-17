@@ -2,6 +2,8 @@ import { db } from "@/server/db";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { type DefaultSession, type NextAuthConfig } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
+import FortyTwoProvider from "next-auth/providers/42-school";
+
 import Mailgun from "next-auth/providers/mailgun";
 
 /**
@@ -32,6 +34,10 @@ declare module "next-auth" {
  */
 export const authConfig = {
 	providers: [
+		FortyTwoProvider({
+			clientId: process.env.FORTY_TWO_CLIENT_ID,
+			clientSecret: process.env.FORTY_TWO_CLIENT_SECRET
+		  }),
 		GoogleProvider,
 		Mailgun({ 
 			from: process.env.EMAIL_FROM,

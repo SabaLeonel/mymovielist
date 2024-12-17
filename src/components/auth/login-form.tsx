@@ -38,7 +38,7 @@ export const LoginForm = () => {
 			});
 	};
 
-	const handleSignIn = async (provider: "google" | "github") => {
+	const handleSignIn = async (provider: "google" | "42-school") => {
         setIsPending(true);
         try {
             await signIn(provider, { callbackUrl: "/" });
@@ -111,7 +111,7 @@ export const LoginForm = () => {
 							</span>
 						</h1>
 						<Social disable={isPending} onSignIn={handleSignIn} />
-						<Separator className="bg-gray-500/50" />
+						<Separator className="bg-gray-500/50 my-1" />
 						<Button
 							className="w-full h-12 rounded-lg text-base"
 							variant="default"

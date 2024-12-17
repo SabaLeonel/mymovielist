@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { CircleUserRound } from "lucide-react";
 
 
 export function SignIn() {
@@ -11,7 +12,7 @@ export function SignIn() {
 			variant="default"
 			className="w-full rounded-full"
 		>
-			<Link href="/auth/sign-in">Sign In</Link>
+			<Link href="/auth/sign-in"><CircleUserRound />Sign In</Link>
 		</Button>
 	);
 }

@@ -21,14 +21,15 @@ export default function RootLayout({
 		<html lang="en" suppressHydrationWarning>
 			<head />
 			<body className={cn(
-				"min-h-screen bg-background font-sans antialiased",
+				"min-h-screen font-sans antialiased",
 				GeistSans.variable
 			)}
 			>
 				<TRPCReactProvider>
-					<HolyLoader color="#ff0000" />
+					<HolyLoader color="linear-gradient(to right, #ff0000, #FE2790" height="3px"         speed={500}
+ />
 					<ThemeProvider attribute="class" defaultTheme="dark">
-						<div className="relative flex min-h-screen flex-col dark:bg-[#150002]">{children}</div>
+						<div className="relative flex min-h-screen flex-col bg-[#150002]">{children}</div>
 					</ThemeProvider>
 					<Analytics />
 				</TRPCReactProvider>
