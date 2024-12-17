@@ -9,6 +9,7 @@ import { login } from "@/server/actions/login";
 import { LoginSchema } from "@/server/schemas/auth";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ChevronLeft, Loader2, Mail, WandSparkles } from 'lucide-react';
+import { signIn } from "next-auth/react";
 import { useState } from 'react';
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -36,6 +37,15 @@ export const LoginForm = () => {
 				setIsPending(false);
 			});
 	};
+
+	const handleSignIn = async (provider: "google" | "github") => {
+        setIsPending(true);
+        try {
+            await signIn(provider, { callbackUrl: "/" });
+        } finally {
+            setIsPending(false);
+        }
+    };
 
 	return (
 		<>
@@ -100,11 +110,12 @@ export const LoginForm = () => {
 								Log in to mymovie<span className="text-primary">list</span>
 							</span>
 						</h1>
-						<Social />
+						<Social disable={isPending} onSignIn={handleSignIn} />
 						<Separator className="bg-gray-500/50" />
 						<Button
 							className="w-full h-12 rounded-lg text-base"
 							variant="default"
+							disabled={isPending}
 							onClick={() => setShowForm(true)}
 						>
 							<Mail />

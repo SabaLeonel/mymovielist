@@ -1,5 +1,5 @@
-import { SignIn } from "@/components/auth/sign-in"
-import { SignOut } from "@/components/auth/sign-out"
+import { SignIn } from "@/components/auth/sign-in";
+import { SignOut } from "@/components/auth/sign-out";
 import { auth } from "@/server/auth";
 
 

@@ -18,7 +18,6 @@ export const Header = () => {
 						<SearchInput />
 					</Suspense>
 					<SiteSettings />
-
 					<div className="lg:hidden">
 						<MobileNav />
 					</div>
