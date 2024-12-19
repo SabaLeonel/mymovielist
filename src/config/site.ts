@@ -136,5 +136,7 @@ import {
 	"with_genres",
 	"primary_release_date.gte",
 	"primary_release_date.lte",
+	"first_air_date.gte",
+	"first_air_date.lte",
   ]
   
