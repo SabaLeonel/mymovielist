@@ -36,7 +36,7 @@ export const MediaRating: React.FC<MediaRatingProps> = ({
 				</TooltipTrigger>
 
 				{!!count && (
-					<TooltipContent className="flex items-center gap-1 bg-foreground text-xs text-background">
+					<TooltipContent className="bg-foreground text-background flex items-center gap-1 text-xs">
 						<User className="size-3" /> {count}
 					</TooltipContent>
 				)}

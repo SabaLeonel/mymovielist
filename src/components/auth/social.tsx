@@ -33,17 +33,17 @@ export const Social: React.FC<Props> = ({ disable, onSignIn }) => {
 
 
 	return (
-		<div className="flex flex-col items-center w-full gap-2">
+		<div className="flex w-full flex-col items-center gap-2">
 			<OauthButton
 				provider="42-school"
-				className="w-full h-12 text-base rounded-lg bg-[#00BABC] hover:bg-[#00BABC]/80"
-				icon={<Si42 className="h-5 w-5" />}
+				className="h-12 w-full rounded-lg bg-[#00BABC] text-base hover:bg-[#00BABC]/80"
+				icon={<Si42 className="size-5" />}
 				text="Continue with 42"
 			/>
 			<OauthButton
 				provider="google"
-				className="w-full h-12 text-base rounded-lg bg-[#272727] hover:bg-[#3f3f3f]"
-				icon={<FaGoogle className="h-5 w-5" />}
+				className="h-12 w-full rounded-lg bg-[#272727] text-base hover:bg-[#3f3f3f]"
+				icon={<FaGoogle className="size-5" />}
 				text="Continue with Google"
 			/>
 		</div>

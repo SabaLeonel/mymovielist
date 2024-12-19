@@ -3,7 +3,7 @@ import { ComponentProps } from "react"
 import { cn } from "@/lib/utils"
 
 const Root: React.FC<ComponentProps<"div">> = ({ className, ...props }) => {
-  return <div className={cn("relative aspect-poster", className)} {...props} />
+  return <div className={cn("aspect-poster relative", className)} {...props} />
 }
 
 const Content: React.FC<ComponentProps<"div">> = ({
@@ -31,7 +31,7 @@ const Excerpt: React.FC<ComponentProps<"p">> = ({ className, ...props }) => {
   return (
     <p
       className={cn(
-        "line-clamp-3 text-xs text-muted-foreground md:text-base",
+        "text-muted-foreground line-clamp-3 text-xs md:text-base",
         className
       )}
       {...props}

@@ -22,7 +22,7 @@ const SiteNav = () => {
 			<Link href="/">
 				<h1 className="text-xl font-bold">
 					<span className="sr-only">MyMovieList</span>
-					<span className="tracking-tight dark:text-white cursor-pointer">
+					<span className="cursor-pointer tracking-tight dark:text-white">
 						mymovie<span className="text-primary">list</span>
 					</span>
 				</h1>
@@ -92,7 +92,7 @@ const SiteNavListItem = ({ title, icon, description, href }: NavItem) => {
 		<NavigationMenuLink asChild>
 			<Link
 				href={href}
-				className="select-none space-y-2 rounded-md p-3 hover:bg-accent"
+				className="hover:bg-accent select-none space-y-2 rounded-md p-3"
 			>
 				<div className="text-sm font-medium leading-none">
 					<Icon className="mr-1 inline size-3" /> {title}
@@ -102,7 +102,7 @@ const SiteNavListItem = ({ title, icon, description, href }: NavItem) => {
 						</Badge>
 					)}
 				</div>
-				<p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+				<p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
 					{description}
 				</p>
 			</Link>

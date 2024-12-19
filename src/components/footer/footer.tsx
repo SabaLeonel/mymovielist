@@ -21,13 +21,13 @@ const currentYear = new Date().getFullYear();
 
 export function Footer() {
     return (
-        <footer className="relative w-full mt-12 pt-12 border-t bg-background">
+        <footer className="bg-background relative mt-12 w-full border-t pt-12">
             <div className="mx-auto w-full max-w-7xl px-8">
                 <div className="grid grid-cols-1 justify-between gap-4 md:grid-cols-2">
                     <Link href="/" className="mb-6">
                         <h1 className="text-xl font-bold">
                             <span className="sr-only">MyMovieList</span>
-                            <span className="tracking-tight dark:text-white cursor-pointer">
+                            <span className="cursor-pointer tracking-tight dark:text-white">
                                 mymovie<span className="text-primary">list</span>
                             </span>
                         </h1>
@@ -35,9 +35,9 @@ export function Footer() {
                     <div className="grid grid-cols-3 justify-between gap-4">
                         {navigation.items.slice(1, navigation.items.length).map((item) => (
                             <ul className="flex-1" key={item.title}>
-                                <h3 className="lg:text-lg font-bold  text-muted-foreground">{item.title}</h3>
+                                <h3 className="text-muted-foreground font-bold  lg:text-lg">{item.title}</h3>
                                 {item.items?.map((subitem) => (
-                                    <li className="mb-2 text-sm hover:text-primary transition-colors" key={subitem.href}>
+                                    <li className="hover:text-primary mb-2 text-sm transition-colors" key={subitem.href}>
                                         <Link
                                             href={subitem.href}
                                             prefetch={false}
@@ -51,18 +51,18 @@ export function Footer() {
                         ))}
                     </div>
                 </div>
-                <div className="mt-12 flex w-full flex-col items-center justify-center border-t border-blue-gray-50 py-4 md:flex-row md:justify-between">
-                    <p className="mb-4 text-center font-normal text-muted-foreground md:mb-0">
-                        &copy; {currentYear} <Link href="https://quezada.ch" target="_blank" className="text-white hover:text-primary">Leonel Saba Quezada</Link>. All
+                <div className="border-blue-gray-50 mt-12 flex w-full flex-col items-center justify-center border-t py-4 md:flex-row md:justify-between">
+                    <p className="text-muted-foreground mb-4 text-center font-normal md:mb-0">
+                        &copy; {currentYear} <Link href="https://quezada.ch" target="_blank" className="hover:text-primary text-white">Leonel Saba Quezada</Link>. All
                         Rights Reserved.
                     </p>
-                    <div className="flex gap-4 text-blue-gray-900 sm:justify-center">
+                    <div className="text-blue-gray-900 flex gap-4 sm:justify-center">
         
                         <Link href={siteConfig.links.tmdb} target="_blank" className="opacity-80 transition-opacity hover:opacity-100">
-                            <Icons.Tmdb className="fill-current size-6" />
+                            <Icons.Tmdb className="size-6 fill-current" />
                         </Link>
                         <Link href={siteConfig.links.github} target="_blank" className="opacity-80 transition-opacity hover:opacity-100">
-                            <Icons.Github className="fill-current size-6" />
+                            <Icons.Github className="size-6 fill-current" />
                         </Link>
                     </div>
                 </div>

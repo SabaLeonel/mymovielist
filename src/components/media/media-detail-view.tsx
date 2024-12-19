@@ -15,7 +15,7 @@ const Backdrop: React.FC<ComponentProps<"div">> = ({
 }) => {
   return (
     <div className={cn("container", className)} {...props}>
-      <div className="md:h-hero relative hidden aspect-poster w-full md:block">
+      <div className="md:h-hero aspect-poster relative hidden w-full md:block">
         {children}
       </div>
     </div>
@@ -47,7 +47,7 @@ const Poster: React.FC<ComponentProps<"div">> = ({
   return (
     <div
       className={cn(
-        "relative aspect-poster w-full place-self-start md:-mt-32 md:block md:w-56 lg:w-64 xl:-mt-64 xl:w-80",
+        "aspect-poster relative w-full place-self-start md:-mt-32 md:block md:w-56 lg:w-64 xl:-mt-64 xl:w-80",
         className
       )}
       {...props}
@@ -89,7 +89,7 @@ const Title: React.FC<ComponentProps<"h1">> = ({ className, ...props }) => {
 const Overview: React.FC<ComponentProps<"p">> = ({ className, ...props }) => {
   return (
     <div
-      className={cn("space-y-4 text-muted-foreground xl:text-lg", className)}
+      className={cn("text-muted-foreground space-y-4 xl:text-lg", className)}
       {...props}
     />
   )

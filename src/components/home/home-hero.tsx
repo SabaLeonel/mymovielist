@@ -46,15 +46,15 @@ export const HomeHero: React.FC<HomeHeroProps> = ({
 					<p className="line-clamp-3 text-sm text-white md:text-lg">
 						{item?.overview}
 					</p>
-					<div className="flex flex-col items-left  gap-4 md:flex-row">
+					<div className="items-left flex flex-col  gap-4 md:flex-row">
 						<Link
 							href={`/movie/${item?.id}`}
 							className={`${buttonVariants({
 								size: "lg",
 								variant: "default",
-							})} dark:rounded-full dark:bg-white dark:text-black dark:hover:text-white dark:hover:bg-primary/75`}
+							})} dark:hover:bg-primary/75 dark:rounded-full dark:bg-white dark:text-black dark:hover:text-white`}
 						>
-							<FaPlay className="h-2 w-2" />Details
+							<FaPlay className="size-2" />Details
 						</Link>
 					</div>
 				</div>

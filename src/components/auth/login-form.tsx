@@ -53,11 +53,11 @@ export const LoginForm = () => {
 				<Form {...form}>
 					<form
 						onSubmit={form.handleSubmit(onSubmit)}
-						className="absolute left-0 top-0 h-full w-full animate-zoomIn"
+						className="animate-zoomIn absolute left-0 top-0 size-full"
 					>
 						<div className="flex flex-col items-center gap-3">
 							<h1 className="mt-4 text-2xl font-semibold tracking-tight">
-								What's your email address?
+								{`What's your email address?`}
 							</h1>
 							<div className="flex w-full flex-col">
 								<FormField control={form.control} name="email" render={({ field }) => (
@@ -77,7 +77,7 @@ export const LoginForm = () => {
 								<FormError message={error} />
 							</div>
 
-							<Button type="submit" className="w-full h-11" variant="default" disabled={isPending}>
+							<Button type="submit" className="h-11 w-full" variant="default" disabled={isPending}>
 								{isPending ? (
 									<>
 										<Loader2 className="animate-spin" />
@@ -91,7 +91,7 @@ export const LoginForm = () => {
 								)}
 							</Button>
 							<Button
-								className="text-sm font-medium mt-2 hover:bg-primary/80 hover:text-white h-8 py-2 mt-2 px-2 text-slate-500"
+								className="hover:bg-primary/80 mt-2 h-8 p-2 text-sm font-medium text-slate-500 hover:text-white"
 								variant="ghost"
 								onClick={() => setShowForm(false)}
 								type="button"
@@ -111,9 +111,9 @@ export const LoginForm = () => {
 							</span>
 						</h1>
 						<Social disable={isPending} onSignIn={handleSignIn} />
-						<Separator className="bg-gray-500/50 my-1" />
+						<Separator className="my-1 bg-gray-500/50" />
 						<Button
-							className="w-full h-12 rounded-lg text-base"
+							className="h-12 w-full rounded-lg text-base"
 							variant="default"
 							disabled={isPending}
 							onClick={() => setShowForm(true)}

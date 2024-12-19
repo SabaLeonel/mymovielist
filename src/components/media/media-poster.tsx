@@ -26,7 +26,7 @@ export const MediaPoster: React.FC<MediaPosterProps> = ({
     return (
       <div
         className={cn(
-          "size-full rounded-3xl border bg-muted text-muted-foreground",
+          "bg-muted text-muted-foreground size-full rounded-3xl border",
           className
         )}
         {...props}
@@ -41,7 +41,7 @@ export const MediaPoster: React.FC<MediaPosterProps> = ({
   return (
     <Image
       className={cn(
-        "size-full rounded-3xl border bg-muted object-cover",
+        "bg-muted size-full rounded-3xl border object-cover",
         className
       )}
       src={src}

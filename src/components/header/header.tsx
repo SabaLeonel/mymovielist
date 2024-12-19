@@ -10,7 +10,7 @@ import { Suspense } from "react"
 export const Header = () => {
 
 	return (
-		<header className="sticky top-0 z-40 w-full border-b bg-background backdrop-blur-xl">
+		<header className="bg-background sticky top-0 z-40 w-full border-b backdrop-blur-xl">
 			<div className="container flex h-14 items-center space-x-4 sm:justify-between sm:space-x-0">
 				<SiteNav />
 				<div className="flex flex-1 justify-end gap-2">

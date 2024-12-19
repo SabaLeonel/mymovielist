@@ -61,7 +61,7 @@ export default async function Detail({ params }: DetailProps) {
 				<Link
 					key={id}
 					href={`/movie/discover?with_companies=${id}`}
-					className="mr-1 border-b-2 transition hover:text-foreground"
+					className="hover:text-foreground mr-1 border-b-2 transition"
 				>
 					{name}
 				</Link>
@@ -75,7 +75,7 @@ export default async function Detail({ params }: DetailProps) {
 				{overview.map((item) => (
 					<div key={item.title}>
 						<h2 className="font-medium md:text-xl">{item.title}</h2>
-						<p className="mt-2 line-clamp-2 text-sm text-muted-foreground md:text-base">
+						<p className="text-muted-foreground mt-2 line-clamp-2 text-sm md:text-base">
 							{item.value}
 						</p>
 					</div>
