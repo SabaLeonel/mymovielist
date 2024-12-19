@@ -61,7 +61,6 @@ export default async function Search({ searchParams }: SearchProps) {
 						return <SearchResultCard key={result.id} media={result} />
 					})}
 				</div>
-
 				<ListPagination currentPage={currentPage} totalPages={total_pages} />
 			</div>
 		</div>
