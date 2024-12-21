@@ -4,7 +4,8 @@ import { useFilters } from "@/hooks"
 import { Genre } from "@/tmdb/models/commons"
 import { SlidersHorizontal } from "lucide-react"
 
-import { cn } from "@/lib/utils"
+import { DiscoverFilterDate } from "@/components/discover/discover-filter-date"
+import { DiscoverFilterGenre } from "@/components/discover/discover-filter-genre"
 import { Badge } from "@/components/ui/badge"
 import { Button, buttonVariants } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
@@ -18,8 +19,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
-import { DiscoverFilterDate } from "@/components/discover/discover-filter-date"
-import { DiscoverFilterGenre } from "@/components/discover/discover-filter-genre"
+import { cn } from "@/lib/utils"
 
 interface DiscoverFiltersProps {
   type: "movie"
