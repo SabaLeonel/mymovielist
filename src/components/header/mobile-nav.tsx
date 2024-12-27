@@ -50,13 +50,14 @@ export const MobileNav = () => {
 						)
 					)
 					}
-					<AuthComponent />
 				</Accordion>
 
 				<Separator className="mt-4" />
 
 				<DrawerFooter>
+					<AuthComponent />
 					<nav className="flex gap-2">
+
 						<Link
 							href={siteConfig.links.github}
 							className={cn(buttonVariants({ variant: "outline" }), "flex-1")}

@@ -1,12 +1,16 @@
+"use client";
 
-"use server"
-
-import { auth } from "@/server/auth";
+import { useSession } from "next-auth/react"
 import { SignIn } from "@/components/auth/sign-in";
 import { SignOut } from "@/components/auth/sign-out";
 
-export const AuthComponent = async () => {
-	const session = await auth();
+export function AuthComponent() {
+	const { status } = useSession();
 
-	return session ? (<SignOut />) : (<SignIn />);
+	return (
+		<>
+			{status === "authenticated" && <SignOut />}
+			{status === "unauthenticated" && <SignIn />}
+		</>
+	)
 };

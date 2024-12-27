@@ -3,7 +3,6 @@ import { Header } from "@/components/header/header";
 import type { PropsWithChildren } from 'react';
 
 export default function Layout({ children }: Readonly<PropsWithChildren>) {
-
 	return (
 		<>
 			<Header />
