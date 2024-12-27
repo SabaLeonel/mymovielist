@@ -3,7 +3,7 @@
 import { MobileNav } from "@/components/header/mobile-nav"
 import { SiteNav } from "@/components/header/nav-menu"
 import { SearchInput } from "@/components/header/search-input"
-import { AuthComponent } from "@/components/auth/auth-component"
+import { SiteSettings } from "@/components/header/site-settings"
 import { Skeleton } from "@/components/ui/skeleton"
 import { Suspense } from "react"
 
@@ -18,7 +18,7 @@ export const Header = () => {
 						<SearchInput />
 					</Suspense>
 					<div className="hidden lg:flex">
-						<AuthComponent />
+						<SiteSettings />
 					</div>
 					<div className="lg:hidden">
 						<MobileNav />
