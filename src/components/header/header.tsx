@@ -4,6 +4,7 @@ import { MobileNav } from "@/components/header/mobile-nav"
 import { SiteNav } from "@/components/header/nav-menu"
 import { SearchInput } from "@/components/header/search-input"
 import { SiteSettings } from "@/components/header/settings"
+import { AuthComponent } from "@/components/auth/auth-component"
 import { Skeleton } from "@/components/ui/skeleton"
 import { Suspense } from "react"
 
@@ -17,7 +18,9 @@ export const Header = () => {
 					<Suspense fallback={<Skeleton className="h-10 w-60" />}>
 						<SearchInput />
 					</Suspense>
-					<SiteSettings />
+					<div className="hidden lg:flex">
+						<AuthComponent />
+					</div>
 					<div className="lg:hidden">
 						<MobileNav />
 					</div>

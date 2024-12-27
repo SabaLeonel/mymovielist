@@ -25,7 +25,7 @@ export default function Page() {
 					Open Outlook
 				</a>
 			</div>
-			<div className="mt-8 text-center text-xs text-slate-400">{`Can't see the email? Please check your spam folder.<br />
+			<div className="mt-8 text-center text-xs text-slate-400">{`Can't see the email? Please check your spam folder.`}<br />{`
 				Wrong email?`}
 				<a href="/auth/sign-in"><span className="text-blue-400 transition-colors hover:text-blue-300"> Please re-enter your address.</span></a>
 			</div>
