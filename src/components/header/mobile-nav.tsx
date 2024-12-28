@@ -1,11 +1,7 @@
 "use client"
 
-import { NavItem, navigation, siteConfig } from "@/config"
-import { useDialog } from "@/hooks"
-import { Bug, MenuIcon } from "lucide-react"
-import Link from "next/link"
-import { Icons } from "@/components/icons"
 import { AuthComponent } from "@/components/auth/auth-component"
+import { Icons } from "@/components/icons"
 import {
 	Accordion,
 	AccordionContent,
@@ -22,7 +18,11 @@ import {
 	DrawerTrigger,
 } from "@/components/ui/drawer"
 import { Separator } from "@/components/ui/separator"
+import { NavItem, navigation, siteConfig } from "@/config"
+import { useDialog } from "@/hooks"
 import { cn } from "@/lib/utils"
+import { Bug, MenuIcon } from "lucide-react"
+import Link from "next/link"
 
 export const MobileNav = () => {
 	const [open, setOpen] = useDialog();
@@ -68,15 +68,14 @@ export const MobileNav = () => {
 							<span>Source code</span>
 						</Link>
 
-						<a
+						<Link
 							href={siteConfig.links.github + "/issues"}
 							className={cn(buttonVariants({ variant: "outline" }), "flex-1")}
-							target="_blank"
-							rel="noopener noreferrer"
+
 						>
 							<Bug className="mr-2 inline size-4 align-middle" />
 							Submit a bug
-						</a>
+						</Link>
 					</nav>
 				</DrawerFooter>
 			</DrawerContent>

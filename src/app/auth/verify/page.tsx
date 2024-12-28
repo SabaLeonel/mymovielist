@@ -1,3 +1,4 @@
+import { Link } from "lucide-react";
 import { PiMicrosoftOutlookLogo } from "react-icons/pi";
 import { SiGmail } from "react-icons/si";
 
@@ -16,14 +17,14 @@ export default function Page() {
 			<div data-orientation="horizontal" role="none" className="my-8 h-[0.5px] w-full shrink-0 bg-slate-800"></div>
 			<div className="flex gap-2 text-slate-400">
 
-				<a className="focus-visible:ring-ring hover:bg-accent hover:text-accent-foreground inline-flex h-8 items-center justify-center whitespace-nowrap rounded-md px-[14px] py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50" href="https://mail.google.com">
+				<Link className="focus-visible:ring-ring hover:bg-accent hover:text-accent-foreground inline-flex h-8 items-center justify-center whitespace-nowrap rounded-md px-[14px] py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50" href="https://mail.google.com">
 					<SiGmail className="mr-2 size-4" />
 					Open Gmail
-				</a>
-				<a className="focus-visible:ring-ring hover:bg-accent hover:text-accent-foreground inline-flex h-8 items-center justify-center whitespace-nowrap rounded-md px-[14px] py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50" href="https://outlook.live.com/mail	">
+				</Link>
+				<Link className="focus-visible:ring-ring hover:bg-accent hover:text-accent-foreground inline-flex h-8 items-center justify-center whitespace-nowrap rounded-md px-[14px] py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50" href="https://outlook.live.com/mail	">
 					<PiMicrosoftOutlookLogo className="mr-2 size-4" />
 					Open Outlook
-				</a>
+				</Link>
 			</div>
 			<div className="mt-8 text-center text-xs text-slate-400">{`Can't see the email? Please check your spam folder.`}<br />{`
 				Wrong email?`}
