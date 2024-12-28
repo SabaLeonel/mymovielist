@@ -62,8 +62,9 @@ export const TrendCarousel: React.FC<TrendCarouselProps> = ({
 
 					<Link
 						href={link}
+						scroll={false}
 						prefetch={false}
-						className="group flex items-center "
+						className="group flex items-center"
 					>
 						<Tally1 strokeWidth={3} className="text-primary -mr-4 size-8" />
 						<h2 className="font-semibold  md:text-2xl">{title}</h2>

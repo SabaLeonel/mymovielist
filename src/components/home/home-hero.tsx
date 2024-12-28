@@ -2,7 +2,7 @@
 
 import { MediaBackdrop } from "@/components/media/media-backdrop";
 import { Badge } from "@/components/ui/badge";
-import { buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { getFilmItemsByTitle } from "@/lib/utils";
 import { Movie } from "@/tmdb/models";
@@ -47,15 +47,14 @@ export const HomeHero: React.FC<HomeHeroProps> = ({
 						{item?.overview}
 					</p>
 					<div className="items-left flex flex-col  gap-4 md:flex-row">
-						<Link
-							href={`/movie/${item?.id}`}
-							className={`${buttonVariants({
-								size: "lg",
-								variant: "default",
-							})} dark:hover:bg-primary/75 dark:rounded-full dark:bg-white dark:text-black dark:hover:text-white`}
-						>
-							<FaPlay className="size-2" />Details
-						</Link>
+						<Button asChild
+							size="lg"
+							variant="default"
+							className="hover:bg-primary/75 rounded-full bg-white text-black hover:text-white">
+							<Link href={`/movie/${item?.id}`} scroll={false}>
+								<FaPlay className="size-2" />Details
+							</Link>
+						</Button>
 					</div>
 				</div>
 			</div>
