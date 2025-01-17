@@ -1,13 +1,12 @@
-import { cookies } from "next/headers"
 import { pages } from "@/config"
 import { tmdb } from "@/tmdb/api"
 import { SortByType } from "@/tmdb/api/types"
 
-import { filterDiscoverParams } from "@/lib/utils"
 import { DiscoverFilters } from "@/components/discover/discover-filters"
 import { DiscoverSort } from "@/components/discover/discover-sort"
 import { ListPagination } from "@/components/list/list-pagination"
 import { MovieCard } from "@/components/movie/movie-card"
+import { filterDiscoverParams } from "@/lib/utils"
 
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>
 
@@ -21,7 +20,6 @@ export async function generateMetadata() {
 
 export default async function Discover({ searchParams }: { searchParams: Promise<SearchParams> }) {
 	const resolvedSearchParams = await searchParams;
-	const region = (await cookies()).get("region")?.value ?? "US"
 
 	const {
 		results: movies,

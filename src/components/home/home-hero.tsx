@@ -36,7 +36,6 @@ export const HomeHero: React.FC<HomeHeroProps> = ({
 
 		<div className="h-hero relative" key={item?.id}>
 			<MediaBackdrop image={item?.backdrop_path} alt={item?.title ?? ''} />
-
 			<div className="overlay">
 				<div className=" max-w-3xl space-y-4 p-4 pb-8 text-left md:p-14">
 					<Badge variant="outline" className="select-none">{label}</Badge>

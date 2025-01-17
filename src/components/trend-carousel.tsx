@@ -62,7 +62,7 @@ export const TrendCarousel: React.FC<TrendCarouselProps> = ({
 
 					<Link
 						href={link}
-						scroll={false}
+						scroll={true}
 						prefetch={false}
 						className="group flex items-center"
 					>
