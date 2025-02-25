@@ -9,6 +9,16 @@ export const metadata: Metadata = {
 }
 
 export default async function Home() {
+
+	const { results: alienResults } = await tmdb.search.multi({
+		query: "Alien: Romulus",
+		page: "1",
+		adult: false,
+	})
+
+	const alienRomulus = alienResults?.[0]
+
+
 	const { results: trending_movies } = await tmdb.trending.movie({
 		time: "day",
 		page: "1",
@@ -42,7 +52,7 @@ export default async function Home() {
 					<p className="text-center">Made with Next.js, React and Tailwindcss</p>
 				</div>
 				<div className="animate-fadeUp container relative space-y-8">
-					<HomeHero movies={trending_movies} label="Trending Now" />
+					<HomeHero movie={alienRomulus} label="Trending Now" />
 					<TrendCarousel
 						type="movie"
 						title="Trending Movies"
