@@ -129,7 +129,7 @@ const trending = {
 }
 
 export const navigation = {
-	items: [home, movies, people, trending] as NavItem[],
+	items: [home, movies,] as NavItem[],
 }
 
 export const availableParams = [
