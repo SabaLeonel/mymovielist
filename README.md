@@ -1,29 +1,75 @@
-# Create T3 App
+# 🎬 MyMovieList
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+MyMovieList is a modern web application to explore trending movies and TV shows in real time using the TMDb API.  
+Built with the T3 stack (Next.js, TypeScript, Tailwind, tRPC, Prisma, NextAuth), it offers a fast, clean and secure browsing experience.
 
-## What's next? How do I make an app with this?
+---
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+## 🚀 Features
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+- 🔍 **Browse trends, latest releases & popular movies/series** (live TMDb API)
+- 🎨 **Fast & responsive UI** using Next.js, React, TailwindCSS & Shadcn UI
+- 🔐 **Authentication with multiple providers**  
+  - Google OAuth  
+  - Magic Link (Mailgun)  
+  - 42 Intra OAuth  
+- 👤 **User accounts** with Prisma + PostgreSQL
+- ⚡ **End-to-end typesafe API** using tRPC
+- 🌗 **Dark mode** via `next-themes`
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+---
 
-## Learn More
+## 🛠️ Tech Stack
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+### Frontend
+- Next.js 15 (App Router)
+- React 18
+- TypeScript
+- TailwindCSS
+- Shadcn UI
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+### Backend
+- NextAuth v5  
+- tRPC  
+- Prisma ORM  
+- PostgreSQL (Vercel Postgres or local)
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+### DevOps
+- Turbopack (Next.js dev)
+- Prettier + ESLint
+- Docker-ready (optional)
 
-## How do I deploy this?
+---
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+## 🔐 Authentication
+
+MyMovieList supports multiple login options:
+
+| Provider | Status |
+|---------|--------|
+| Google OAuth | ✅ |
+| Magic Link (email) | ✅ |
+| 42 OAuth | ✅ |
+| Discord OAuth | ⏳ (optional) |
+
+Everything is configured through **NextAuth v5** with Prisma Adapter.
+
+---
+
+## 🌟 Roadmap
+
+- ⭐ **Create & manage favorites lists**
+- 📁 User profiles with ratings & watchlists
+- 🧭 Better search filters (genres, year, platforms)
+- 💬 Comments / reviews system
+- 📱 Mobile app (React Native)
+
+---
+
+## 📦 Installation
+
+Clone the project:
+
+```bash
+git clone https://github.com/your-user/mymovielist.git
+cd mymovielist
