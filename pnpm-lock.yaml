@@ -108,7 +108,7 @@ importers:
         specifier: ^0.460.0
         version: 0.460.0(react@18.3.1)
       next:
-        specifier: ^15.0.5
+        specifier: ^15.0.7
         version: 15.5.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       next-auth:
         specifier: 5.0.0-beta.25
@@ -175,7 +175,7 @@ importers:
         specifier: ^8.57.1
         version: 8.57.1
       eslint-config-next:
-        specifier: ^15.0.1
+        specifier: ^15.0.7
         version: 15.5.9(eslint@8.57.1)(typescript@5.9.3)
       nodemailer:
         specifier: ^6.9.16
