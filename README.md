@@ -3,7 +3,7 @@
 MyMovieList is a modern web application to explore trending movies and TV shows in real time using the TMDb API.  
 Built with the T3 stack (Next.js, TypeScript, Tailwind, tRPC, Prisma, NextAuth), it offers a fast, clean and secure browsing experience.
 
----
+
 
 ## 🚀 Features
 
@@ -17,7 +17,7 @@ Built with the T3 stack (Next.js, TypeScript, Tailwind, tRPC, Prisma, NextAuth),
 - ⚡ **End-to-end typesafe API** using tRPC
 - 🌗 **Dark mode** via `next-themes`
 
----
+
 
 ## 🛠️ Tech Stack
 
@@ -39,7 +39,6 @@ Built with the T3 stack (Next.js, TypeScript, Tailwind, tRPC, Prisma, NextAuth),
 - Prettier + ESLint
 - Docker-ready (optional)
 
----
 
 ## 🔐 Authentication
 
@@ -54,7 +53,7 @@ MyMovieList supports multiple login options:
 
 Everything is configured through **NextAuth v5** with Prisma Adapter.
 
----
+
 
 ## 🌟 Roadmap
 
@@ -64,7 +63,7 @@ Everything is configured through **NextAuth v5** with Prisma Adapter.
 - 💬 Comments / reviews system
 - 📱 Mobile app (React Native)
 
----
+
 
 ## 📦 Installation
 
