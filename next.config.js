@@ -8,3 +8,5 @@ import "./src/env.js";
 const config = {};
 
 export default config;
+
+import('@opennextjs/cloudflare').then(m => m.initOpenNextCloudflareForDev());
